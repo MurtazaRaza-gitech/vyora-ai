@@ -10,33 +10,168 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MindsRouteImport } from './routes/minds'
+import { Route as PulseRouteImport } from './routes/pulse'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as VisionRouteImport } from './routes/vision'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as CreationsIndexRouteImport } from './routes/creations.index'
+import { Route as CreationsSlugRouteImport } from './routes/creations.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MindsRoute = MindsRouteImport.update({
+  id: '/minds',
+  path: '/minds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PulseRoute = PulseRouteImport.update({
+  id: '/pulse',
+  path: '/pulse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionRoute = VisionRouteImport.update({
+  id: '/vision',
+  path: '/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreationsIndexRoute = CreationsIndexRouteImport.update({
+  id: '/creations/',
+  path: '/creations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreationsSlugRoute = CreationsSlugRouteImport.update({
+  id: '/creations/$slug',
+  path: '/creations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/mcp': typeof McpRoute
+  '/minds': typeof MindsRoute
+  '/pulse': typeof PulseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vision': typeof VisionRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/creations/$slug': typeof CreationsSlugRoute
+  '/creations/': typeof CreationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/mcp': typeof McpRoute
+  '/minds': typeof MindsRoute
+  '/pulse': typeof PulseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vision': typeof VisionRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/creations/$slug': typeof CreationsSlugRoute
+  '/creations': typeof CreationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/mcp': typeof McpRoute
+  '/minds': typeof MindsRoute
+  '/pulse': typeof PulseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vision': typeof VisionRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/creations/$slug': typeof CreationsSlugRoute
+  '/creations/': typeof CreationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/mcp'
+    | '/minds'
+    | '/pulse'
+    | '/sitemap.xml'
+    | '/vision'
+    | '/.well-known/oauth-protected-resource'
+    | '/creations/$slug'
+    | '/creations/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/mcp'
+    | '/minds'
+    | '/pulse'
+    | '/sitemap.xml'
+    | '/vision'
+    | '/.well-known/oauth-protected-resource'
+    | '/creations/$slug'
+    | '/creations'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/mcp'
+    | '/minds'
+    | '/pulse'
+    | '/sitemap.xml'
+    | '/vision'
+    | '/.well-known/oauth-protected-resource'
+    | '/creations/$slug'
+    | '/creations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConnectRoute: typeof ConnectRoute
+  McpRoute: typeof McpRoute
+  MindsRoute: typeof MindsRoute
+  PulseRoute: typeof PulseRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VisionRoute: typeof VisionRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  CreationsSlugRoute: typeof CreationsSlugRoute
+  CreationsIndexRoute: typeof CreationsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +183,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minds': {
+      id: '/minds'
+      path: '/minds'
+      fullPath: '/minds'
+      preLoaderRoute: typeof MindsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pulse': {
+      id: '/pulse'
+      path: '/pulse'
+      fullPath: '/pulse'
+      preLoaderRoute: typeof PulseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision': {
+      id: '/vision'
+      path: '/vision'
+      fullPath: '/vision'
+      preLoaderRoute: typeof VisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creations/': {
+      id: '/creations/'
+      path: '/creations'
+      fullPath: '/creations/'
+      preLoaderRoute: typeof CreationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creations/$slug': {
+      id: '/creations/$slug'
+      path: '/creations/$slug'
+      fullPath: '/creations/$slug'
+      preLoaderRoute: typeof CreationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConnectRoute: ConnectRoute,
+  McpRoute: McpRoute,
+  MindsRoute: MindsRoute,
+  PulseRoute: PulseRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VisionRoute: VisionRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  CreationsSlugRoute: CreationsSlugRoute,
+  CreationsIndexRoute: CreationsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
