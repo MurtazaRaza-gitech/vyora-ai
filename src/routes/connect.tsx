@@ -193,7 +193,7 @@ function Connect() {
               <Reveal key={f.name} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 text-center hover:-translate-y-1 hover:shadow-glow transition-all h-full">
                   <img
-                    src={f.image}
+                    src={f.name.startsWith("Hussnain") ? hussnainConnect : f.image}
                     alt={f.name}
                     width={96}
                     height={96}
