@@ -2,6 +2,9 @@ export const SITE = {
   name: "VYORA.AI",
   legalName: "VYORA.AI",
   url: "https://vyora.aitech.workers.dev",
+  /** Single social preview image used across the site. Update centrally. */
+  ogImage:
+    "https://storage.googleapis.com/gpt-engineer-file-uploads/Ibjxc64JEnXucV0b05MoT0WnY0E2/social-images/social-1777022539063-vyora_logo_2.webp",
   email: "Vyora.ai001@gmail.com",
   gmailCompose:
     "https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com",
@@ -53,6 +56,8 @@ export function pageMeta({ title, description, path, ogType = "website" }: MetaI
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { property: "og:image", content: SITE.ogImage },
+      { name: "twitter:image", content: SITE.ogImage },
     ],
     links: [{ rel: "canonical", href: url }],
   };
@@ -90,6 +95,20 @@ export const organizationLd = {
     addressCountry: SITE.address.country,
   },
   areaServed: "Worldwide",
+  slogan: "Building apps that actually help people live better.",
+  makesOffer: [
+    "Mobile app development",
+    "AI application development",
+    "Web application development",
+    "Software product development",
+    "API development",
+    "AI agent development",
+    "AI integration services",
+    "Product engineering",
+  ].map((name) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name, provider: { "@id": `${SITE.url}/#organization` } },
+  })),
   founder: [
     { "@type": "Person", name: "M. Shehram Mehmood", jobTitle: "Founder" },
     { "@type": "Person", name: "Murtaza Raza", jobTitle: "Co-Founder" },
@@ -114,3 +133,51 @@ export const websiteLd = {
   publisher: { "@id": `${SITE.url}/#organization` },
   inLanguage: "en",
 };
+
+export const CAPABILITIES = [
+  {
+    title: "Mobile app development",
+    body: "Android and cross-platform mobile applications, from first concept through store release.",
+  },
+  {
+    title: "AI application development",
+    body: "Applications built around AI features such as scanning, analysis, personalisation and assistance.",
+  },
+  {
+    title: "Web application development",
+    body: "Web software and dashboards that stay fast, accessible and maintainable as they grow.",
+  },
+  {
+    title: "API & backend development",
+    body: "APIs, data models and backend services that our own products run on.",
+  },
+  {
+    title: "AI agents & integrations",
+    body: "Connecting AI models into real product workflows instead of leaving them as demos.",
+  },
+  {
+    title: "Product engineering",
+    body: "Research, design, build, test and iterate — we run the full product cycle in-house.",
+  },
+] as const;
+
+export function personLd(p: {
+  name: string;
+  role: string;
+  about: string[];
+  skills: readonly string[];
+  image?: string;
+  linkedin?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: p.name,
+    jobTitle: p.role,
+    description: p.about[0],
+    knowsAbout: [...p.skills],
+    worksFor: { "@id": `${SITE.url}/#organization` },
+    url: canonical("/minds"),
+    ...(p.linkedin ? { sameAs: [p.linkedin] } : {}),
+  };
+}

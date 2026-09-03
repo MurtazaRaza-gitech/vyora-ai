@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { CTAButton } from "@/components/CTAButton";
 import { founders } from "@/lib/founders";
 import { Mail, Linkedin, MessageCircle } from "lucide-react";
-import { breadcrumbLd, pageMeta } from "@/lib/site";
+import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/minds")({
   head: () => ({
@@ -29,9 +29,13 @@ export const Route = createFileRoute("/minds")({
               name: f.name,
               jobTitle: f.role,
               email: f.email,
+              description: f.about[0],
+              knowsAbout: f.skills,
               sameAs: [f.linkedin],
-              worksFor: { "@type": "Organization", name: "VYORA.AI" },
+              url: `${SITE.url}/minds`,
+              worksFor: { "@id": `${SITE.url}/#organization` },
             },
+
           })),
         }),
       },

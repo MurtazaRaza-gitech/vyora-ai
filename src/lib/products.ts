@@ -16,12 +16,15 @@ export type Product = {
   seoTitle: string;
   seoDescription: string;
   availability: string;
+  /** schema.org applicationCategory value. */
+  appCategory: string;
 };
 
 export const products: Product[] = [
   {
     name: "Flowdash",
     slug: "flowdash",
+    appCategory: "FinanceApplication",
     status: "In Production",
     category: "Personal Finance & Productivity",
     shortDescription:
@@ -54,6 +57,7 @@ export const products: Product[] = [
   {
     name: "OpenCpp",
     slug: "opencpp",
+    appCategory: "EducationalApplication",
     status: "Closed Testing",
     category: "Education / Programming",
     shortDescription:
@@ -78,6 +82,7 @@ export const products: Product[] = [
   {
     name: "SugarKill",
     slug: "sugarkill",
+    appCategory: "HealthApplication",
     status: "In Development",
     category: "Health, Nutrition & Healthy Lifestyle",
     shortDescription:
@@ -110,6 +115,7 @@ export const products: Product[] = [
   {
     name: "WISHES",
     slug: "wishes",
+    appCategory: "SocialNetworkingApplication",
     status: "In Development",
     category: "Social / Connection",
     shortDescription:
@@ -134,6 +140,7 @@ export const products: Product[] = [
   {
     name: "Giffy",
     slug: "giffy",
+    appCategory: "SocialNetworkingApplication",
     status: "In Development",
     category: "Communication / Social",
     shortDescription:
@@ -158,6 +165,7 @@ export const products: Product[] = [
   {
     name: "Horoguide",
     slug: "horoguide",
+    appCategory: "LifestyleApplication",
     status: "In Development",
     category: "AI / Lifestyle / Astrology",
     shortDescription:
@@ -193,11 +201,13 @@ export function productLd(p: Product) {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: p.name,
-    applicationCategory: "MobileApplication",
+    applicationCategory: p.appCategory,
     operatingSystem: "Android",
     description: p.shortDescription,
     creator: { "@type": "Organization", name: "VYORA.AI" },
     featureList: p.features,
+    applicationSuite: "VYORA.AI",
+    inLanguage: "en",
   };
   if (p.externalUrl) {
     base.url = p.externalUrl;
