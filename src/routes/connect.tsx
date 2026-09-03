@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { useState } from "react";
 import { Mail, MapPin, Send, Handshake, Briefcase, MessageSquare, HelpCircle, Linkedin, MessageCircle } from "lucide-react";
 import { founders } from "@/lib/founders";
+import hussnainConnect from "@/assets/founder-hussnain-connect.jpg";
 import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/connect")({
