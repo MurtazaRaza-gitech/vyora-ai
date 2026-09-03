@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { useState } from "react";
 import { Mail, MapPin, Send, Handshake, Briefcase, MessageSquare, HelpCircle, Linkedin, MessageCircle } from "lucide-react";
 import { founders } from "@/lib/founders";
+import hussnainConnect from "@/assets/founder-hussnain-connect.jpg";
 import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/connect")({
@@ -192,7 +193,7 @@ function Connect() {
               <Reveal key={f.name} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 text-center hover:-translate-y-1 hover:shadow-glow transition-all h-full">
                   <img
-                    src={f.image}
+                    src={f.name.startsWith("Hussnain") ? hussnainConnect : f.image}
                     alt={f.name}
                     width={96}
                     height={96}
