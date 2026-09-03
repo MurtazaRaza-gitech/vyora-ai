@@ -1,33 +1,23 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { NeuralBackground } from "@/components/NeuralBackground";
 import { CTAButton } from "@/components/CTAButton";
 import { Reveal } from "@/components/Reveal";
 import { JourneyTimeline } from "@/components/JourneyTimeline";
 import { Sparkles, Layers, Target, Lightbulb, Compass } from "lucide-react";
-import { pageMeta } from "@/lib/site";
-
-const OG_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/Ibjxc64JEnXucV0b05MoT0WnY0E2/social-images/social-1777022539063-vyora_logo_2.webp";
+import { CAPABILITIES, pageMeta } from "@/lib/site";
+import { products } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
-  head: () => {
-    const base = pageMeta({
-      title: "VYORA.AI — App, AI & Software Product Company in Pakistan",
+  head: () =>
+    pageMeta({
+      title: "AI & App Development Company in Pakistan | VYORA.AI",
       description:
-        "VYORA.AI is a product-building company in Lahore, Pakistan creating mobile apps, AI applications, web software and APIs — including Flowdash, SugarKill, WISHES, Giffy, OpenCpp and Horoguide.",
+        "VYORA.AI builds mobile apps, AI applications, web software, APIs and intelligent digital products from Lahore, Pakistan for users worldwide.",
       path: "/",
-    });
-    return {
-      ...base,
-      meta: [
-        ...base.meta,
-        { property: "og:image", content: OG_IMAGE },
-        { name: "twitter:image", content: OG_IMAGE },
-      ],
-    };
-  },
+    }),
   component: Origin,
 });
+
 
 function Origin() {
   return (
