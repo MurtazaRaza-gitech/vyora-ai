@@ -138,10 +138,131 @@ function Origin() {
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton to="/creations">Discover Our Creations</CTAButton>
-          <CTAButton to="/minds" variant="ghost">Meet The Minds</CTAButton>
+          <CTAButton to="/creations">Explore VYORA.AI Products</CTAButton>
+          <CTAButton to="/minds" variant="ghost">Meet the VYORA.AI Founders</CTAButton>
         </div>
       </section>
+
+      {/* CAPABILITIES */}
+      <section className="relative py-24 bg-card/30" aria-labelledby="capabilities">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <p className="text-sm font-medium tracking-widest uppercase text-primary mb-4 text-center">
+              What We Build
+            </p>
+            <h2 id="capabilities" className="text-4xl sm:text-5xl font-bold text-center mb-4">
+              Mobile apps, AI applications and software
+            </h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-14">
+              VYORA.AI is a technology and product-building company in Lahore, Pakistan. We design,
+              engineer and ship applications end to end — the same way we build our own products.
+            </p>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {CAPABILITIES.map((c, i) => (
+              <Reveal key={c.title} delay={i * 60}>
+                <article className="glass rounded-2xl p-6 h-full">
+                  <h3 className="font-semibold text-foreground">{c.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{c.body}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMPANY FACTS — plain, crawlable answers */}
+      <section className="relative py-24" aria-labelledby="company-facts">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <h2 id="company-facts" className="text-4xl sm:text-5xl font-bold mb-10">
+              About VYORA.AI
+            </h2>
+          </Reveal>
+          <dl className="space-y-7">
+            {[
+              {
+                q: "What is VYORA.AI?",
+                a: (
+                  <>
+                    VYORA.AI is a technology and product-building company that develops mobile apps,
+                    web applications, AI products, APIs, AI agents and software.{" "}
+                    <Link to="/about" className="text-primary underline underline-offset-4">
+                      Learn about VYORA.AI
+                    </Link>
+                    .
+                  </>
+                ),
+              },
+              {
+                q: "Where is VYORA.AI located?",
+                a: <>VYORA.AI is based in Lahore, Punjab, Pakistan, and builds for a global audience.</>,
+              },
+              {
+                q: "When was VYORA.AI founded?",
+                a: <>VYORA.AI was founded in 2023 and registered in 2026.</>,
+              },
+              {
+                q: "Who founded VYORA.AI?",
+                a: (
+                  <>
+                    VYORA.AI was founded by M. Shehram Mehmood (Founder), Murtaza Raza (Co-Founder)
+                    and Hussnain Zia Ullah (Co-Founder).{" "}
+                    <Link to="/minds" className="text-primary underline underline-offset-4">
+                      Meet the VYORA.AI founders
+                    </Link>
+                    .
+                  </>
+                ),
+              },
+              {
+                q: "What products has VYORA.AI built?",
+                a: (
+                  <>
+                    {products.map((p) => p.name).join(", ")}. Flowdash is in production on Google
+                    Play, OpenCpp is in closed testing, and SugarKill, WISHES, Giffy and Horoguide
+                    are in development.{" "}
+                    <Link to="/creations" className="text-primary underline underline-offset-4">
+                      Explore VYORA.AI products
+                    </Link>
+                    .
+                  </>
+                ),
+              },
+              {
+                q: "How do I start a project with VYORA.AI?",
+                a: (
+                  <>
+                    <Link to="/connect" className="text-primary underline underline-offset-4">
+                      Contact VYORA.AI
+                    </Link>{" "}
+                    to discuss an app development, AI application or software project.
+                  </>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.q}>
+                <dt className="text-lg font-semibold text-foreground">{item.q}</dt>
+                <dd className="mt-2 text-muted-foreground">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-10 text-muted-foreground">
+            Also read our{" "}
+            <Link to="/vision" className="text-primary underline underline-offset-4">
+              long-term product vision
+            </Link>{" "}
+            and how we{" "}
+            <Link to="/pulse" className="text-primary underline underline-offset-4">
+              work day to day
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
     </>
   );
 }
