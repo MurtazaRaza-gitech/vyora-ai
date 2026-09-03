@@ -62,15 +62,14 @@ export const founders: Founder[] = [
     whatsapp: "https://wa.me/+923024740866",
     linkedin: "https://www.linkedin.com/in/hussnain-zia-ullah-22bb733a6",
     about: [
-      "Hussnain Zia Ullah brings both technical depth and creative execution to VYORA.AI. With strong skills in programming and design, he focuses on building efficient systems and visually strong products.",
-      "His ability to combine logic with creativity plays a key role in product development.",
+      "Co-Founder combining programming, creative technology, and 3D work to build products that are technically solid and visually strong.",
+      "He develops MERN stack applications and contributes to product development from core logic to visual execution.",
     ],
     skills: [
+      "Entrepreneur",
       "3D Animation",
       "C++ & Python",
-      "Mobile Application Development",
-      "UI/UX & Visual Design",
-      "Entrepreneurship",
+      "MERN Stack Developer",
     ],
   },
 ];
