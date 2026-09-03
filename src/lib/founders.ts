@@ -43,15 +43,14 @@ export const founders: Founder[] = [
     whatsapp: "https://wa.me/+923091070382",
     linkedin: "https://www.linkedin.com/in/murtaza-raza-85365a397",
     about: [
-      "Murtaza Raza plays a central role in shaping product experience and digital strategy at VYORA.AI. His expertise in SEO, UI/UX, and frontend systems ensures that every product is optimized not just for performance, but also for growth and usability.",
-      "He focuses on how users interact with products and how those products scale over time.",
+      "Co-Founder focused on full-stack development, product experience, SEO, and building digital products that are both technically strong and easy for people to use.",
+      "He works across JavaScript and Node.js systems while shaping how products grow and how users interact with them.",
     ],
     skills: [
-      "Frontend Development",
-      "Technical Research & SEO",
-      "Data Security & Control",
-      "UI/UX Prototyping",
-      "Entrepreneurship",
+      "Entrepreneur",
+      "Full Stack Developer",
+      "JavaScript & Node.js",
+      "UI/UX & SEO",
     ],
   },
   {
