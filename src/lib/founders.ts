@@ -24,15 +24,14 @@ export const founders: Founder[] = [
     whatsapp: "https://wa.me/+923127641850",
     linkedin: "https://www.linkedin.com/in/m-shehram-6a706639b/",
     about: [
-      "Shehram Mehmood is the founder of VYORA.AI and the driving force behind its vision. Starting from competitive success at a national level and rebuilding after major setbacks, he leads the company with a strong focus on resilience, strategy, and long-term growth.",
-      "He believes in building systems instead of chasing quick results and focuses on creating products that can scale globally.",
+      "Founder of VYORA.AI focused on building scalable software products, researching emerging technologies, and turning ambitious ideas into practical systems.",
+      "He works across the full stack, leads technical research, and is responsible for driving the company's long-term direction.",
     ],
     skills: [
-      "Frontend Development",
+      "Full Stack Developer",
       "Backend Development & API Integration",
       "Technical Research & Writing",
-      "Strategic Management",
-      "Entrepreneurship",
+      "Entrepreneur",
     ],
   },
   {
