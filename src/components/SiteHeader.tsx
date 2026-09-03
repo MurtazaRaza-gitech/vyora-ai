@@ -58,10 +58,10 @@ export function SiteHeader() {
           className="flex items-center justify-center gap-2 px-4 py-2 group"
         >
           <span className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[linear-gradient(145deg,#f0f0f0_0%,#e2e2e2_40%,#f5f5f5_70%,#ffffff_100%)] shadow-[0_0_14px_rgba(0,0,0,0.1)] border border-black/10 dark:hidden">
-            <img src={vyoraLogoLight} alt="Vyora.AI Logo" className="h-7 w-7 object-contain" />
+            <img src={vyoraLogoLight} alt="VYORA.AI logo" className="h-7 w-7 object-contain" />
           </span>
           <span className="hidden dark:inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[linear-gradient(145deg,#1a1a2e_0%,#16213e_40%,#0f3460_70%,#1a1a2e_100%)] shadow-[0_0_14px_rgba(0,0,0,0.3)] border border-white/15">
-            <img src={vyoraLogoDark} alt="Vyora.AI Logo" className="h-7 w-7 object-contain drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]" />
+            <img src={vyoraLogoDark} alt="VYORA.AI logo" className="h-7 w-7 object-contain drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]" />
           </span>
           <span className="text-lg sm:text-xl font-bold tracking-tight">
             <span className="gradient-text">VYORA</span>
