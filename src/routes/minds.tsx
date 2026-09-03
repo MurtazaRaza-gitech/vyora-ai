@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { CTAButton } from "@/components/CTAButton";
 import { founders } from "@/lib/founders";
 import { Mail, Linkedin, MessageCircle } from "lucide-react";
-import { breadcrumbLd, pageMeta } from "@/lib/site";
+import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/minds")({
   head: () => ({
