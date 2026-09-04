@@ -126,16 +126,29 @@ function Connect() {
 
               <button
                 type="submit"
-                className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+                disabled={status === "sending"}
+                className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:-translate-y-0.5 transition-all w-full sm:w-auto disabled:opacity-60"
                 style={{ background: "var(--gradient-hero)" }}
               >
-                {sent ? "Opening your mail app…" : "Get In Touch"}
+                {status === "sending" ? "Sending…" : "Get In Touch"}
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 
+              {status === "sent" && (
+                <p className="text-sm text-primary" role="status">
+                  Thanks — your message has been received. We'll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-destructive" role="alert">
+                  Something went wrong sending your message. Please try again or email us directly.
+                </p>
+              )}
+
               <p className="text-xs text-muted-foreground">
-                We'll route your message to <span className="text-foreground">Vyora.ai001@gmail.com</span>.
+                Your message is delivered securely to the VYORA.AI team.
               </p>
+
             </form>
           </Reveal>
 
