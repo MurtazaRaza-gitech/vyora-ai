@@ -189,8 +189,8 @@ function Connect() {
                   </p>
                   <p className="flex items-center gap-3 text-foreground">
                     <Mail className="h-4 w-4 text-primary shrink-0" />
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                      Vyora.ai001@gmail.com
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@vyora-ai.technology" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                      contact@vyora-ai.technology
                     </a>
                   </p>
                 </div>

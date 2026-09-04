@@ -29,12 +29,12 @@ export function SiteFooter() {
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@vyora-ai.technology"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors underline-offset-4 hover:underline"
                 >
-                  Vyora.ai001@gmail.com
+                  contact@vyora-ai.technology
                 </a>
               </p>
             </div>

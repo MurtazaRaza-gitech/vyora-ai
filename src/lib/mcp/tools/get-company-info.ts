@@ -12,7 +12,7 @@ export default defineTool({
       registeredIn: "Pakistan",
       address:
         "Bahar Shah Road, Momin Street, Street 20, Joray Pul, Al Faisal Town, Lahore, Punjab, 54000, Pakistan",
-      email: "Vyora.ai001@gmail.com",
+      email: "contact@vyora-ai.technology",
       website: "https://vyora.aitech.workers.dev",
       focus:
         "Building AI-powered products across health, lifestyle, business, education, and entertainment with a long-term, global scale vision.",
