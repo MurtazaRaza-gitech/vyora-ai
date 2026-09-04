@@ -1,7 +1,7 @@
 export const SITE = {
   name: "VYORA.AI",
   legalName: "VYORA.AI",
-  url: "https://vyora.aitech.workers.dev",
+  url: "https://vyora-ai.technology",
   /** Single social preview image used across the site. Update centrally. */
   ogImage:
     "https://storage.googleapis.com/gpt-engineer-file-uploads/Ibjxc64JEnXucV0b05MoT0WnY0E2/social-images/social-1777022539063-vyora_logo_2.webp",
