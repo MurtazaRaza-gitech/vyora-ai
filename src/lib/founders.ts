@@ -20,7 +20,7 @@ export const founders: Founder[] = [
     role: "Founder",
     titles: ["Founder", "Entrepreneur"],
     image: shehram,
-    email: "Vyora.ai001@gmail.com",
+    email: "contact@vyora-ai.technology",
     whatsapp: "https://wa.me/+923127641850",
     linkedin: "https://www.linkedin.com/in/m-shehram-6a706639b/",
     about: [

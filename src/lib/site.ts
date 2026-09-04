@@ -5,9 +5,9 @@ export const SITE = {
   /** Single social preview image used across the site. Update centrally. */
   ogImage:
     "https://storage.googleapis.com/gpt-engineer-file-uploads/Ibjxc64JEnXucV0b05MoT0WnY0E2/social-images/social-1777022539063-vyora_logo_2.webp",
-  email: "Vyora.ai001@gmail.com",
+  email: "contact@vyora-ai.technology",
   gmailCompose:
-    "https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com",
+    "https://mail.google.com/mail/?view=cm&fs=1&to=contact@vyora-ai.technology",
   foundingDate: "2023",
   registeredYear: "2026",
   description:
