@@ -6,6 +6,7 @@ import { Mail, MapPin, Send, Handshake, Briefcase, MessageSquare, HelpCircle, Li
 import { founders } from "@/lib/founders";
 import hussnainConnect from "@/assets/founder-hussnain-connect.jpg";
 import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/connect")({
   head: () => ({
@@ -54,19 +55,24 @@ export const Route = createFileRoute("/connect")({
 
 function Connect() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`New inquiry from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com&su=${subject}&body=${body}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-    setSent(true);
+    setStatus("sending");
+    const { error } = await supabase.from("contact_messages").insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    });
+    if (error) {
+      setStatus("error");
+      return;
+    }
+    setForm({ name: "", email: "", message: "" });
+    setStatus("sent");
   };
+
 
   return (
     <>
@@ -120,16 +126,29 @@ function Connect() {
 
               <button
                 type="submit"
-                className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+                disabled={status === "sending"}
+                className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:-translate-y-0.5 transition-all w-full sm:w-auto disabled:opacity-60"
                 style={{ background: "var(--gradient-hero)" }}
               >
-                {sent ? "Opening your mail app…" : "Get In Touch"}
+                {status === "sending" ? "Sending…" : "Get In Touch"}
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 
+              {status === "sent" && (
+                <p className="text-sm text-primary" role="status">
+                  Thanks — your message has been received. We'll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-destructive" role="alert">
+                  Something went wrong sending your message. Please try again or email us directly.
+                </p>
+              )}
+
               <p className="text-xs text-muted-foreground">
-                We'll route your message to <span className="text-foreground">Vyora.ai001@gmail.com</span>.
+                Your message is delivered securely to the VYORA.AI team.
               </p>
+
             </form>
           </Reveal>
 
