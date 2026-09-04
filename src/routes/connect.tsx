@@ -6,6 +6,7 @@ import { Mail, MapPin, Send, Handshake, Briefcase, MessageSquare, HelpCircle, Li
 import { founders } from "@/lib/founders";
 import hussnainConnect from "@/assets/founder-hussnain-connect.jpg";
 import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/connect")({
   head: () => ({
