@@ -54,19 +54,24 @@ export const Route = createFileRoute("/connect")({
 
 function Connect() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`New inquiry from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=Vyora.ai001@gmail.com&su=${subject}&body=${body}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-    setSent(true);
+    setStatus("sending");
+    const { error } = await supabase.from("contact_messages").insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    });
+    if (error) {
+      setStatus("error");
+      return;
+    }
+    setForm({ name: "", email: "", message: "" });
+    setStatus("sent");
   };
+
 
   return (
     <>
