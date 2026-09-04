@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vyora.aitech.workers.dev/sitemap.xml
+Sitemap: https://vyora-ai.technology/sitemap.xml
