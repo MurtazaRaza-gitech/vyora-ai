@@ -6,7 +6,7 @@ import { Mail, MapPin, Send, Handshake, Briefcase, MessageSquare, HelpCircle, Li
 import { founders } from "@/lib/founders";
 import hussnainConnect from "@/assets/founder-hussnain-connect.jpg";
 import { SITE, breadcrumbLd, pageMeta } from "@/lib/site";
-import { supabase } from "@/integrations/supabase/client";
+import { externalSupabase } from "@/integrations/supabase/external";
 
 export const Route = createFileRoute("/connect")({
   head: () => ({
@@ -60,7 +60,7 @@ function Connect() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    const { error } = await supabase.from("contact_messages").insert({
+    const { error } = await externalSupabase.from("contact_messages").insert({
       name: form.name.trim(),
       email: form.email.trim(),
       message: form.message.trim(),
