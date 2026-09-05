@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTAButton } from "@/components/CTAButton";
+import { Link } from "@tanstack/react-router";
 import { Brain, Compass, Layers, Sparkles } from "lucide-react";
 import { breadcrumbLd, pageMeta } from "@/lib/site";
 
@@ -43,6 +44,17 @@ function About() {
           <Reveal><p>We are not here to follow trends. We are here to build systems, products, and solutions that last.</p></Reveal>
           <Reveal delay={80}>
             <p>Our background combines development, design, research, and strategy, allowing us to approach problems from multiple angles.</p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p>
+              VYORA.AI is a technology and product-building company based in Lahore, Punjab,
+              Pakistan, working with a global audience. We build{" "}
+              <Link to="/services/$slug" params={{ slug: "mobile-app-development" }} className="text-primary underline underline-offset-4">mobile apps</Link>,{" "}
+              <Link to="/services/$slug" params={{ slug: "ai-development" }} className="text-primary underline underline-offset-4">AI applications</Link>,{" "}
+              <Link to="/services/$slug" params={{ slug: "web-development" }} className="text-primary underline underline-offset-4">web software</Link> and{" "}
+              <Link to="/services/$slug" params={{ slug: "software-development" }} className="text-primary underline underline-offset-4">custom software</Link>, and ship them as our own{" "}
+              <Link to="/creations" className="text-primary underline underline-offset-4">products</Link>.
+            </p>
           </Reveal>
         </div>
       </section>
