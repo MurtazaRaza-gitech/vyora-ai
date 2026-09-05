@@ -21,6 +21,7 @@ import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } fr
 import { Route as CreationsIndexRouteImport } from './routes/creations.index'
 import { Route as CreationsSlugRouteImport } from './routes/creations.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -83,6 +84,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/vision': typeof VisionRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/creations/$slug': typeof CreationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/creations/': typeof CreationsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/vision': typeof VisionRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/creations/$slug': typeof CreationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/creations': typeof CreationsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/vision': typeof VisionRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/creations/$slug': typeof CreationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/creations/': typeof CreationsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/.well-known/oauth-protected-resource'
     | '/creations/$slug'
+    | '/services/$slug'
     | '/creations/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -154,6 +164,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/.well-known/oauth-protected-resource'
     | '/creations/$slug'
+    | '/services/$slug'
     | '/creations'
     | '/services'
   id:
@@ -168,6 +179,7 @@ export interface FileRouteTypes {
     | '/vision'
     | '/.well-known/oauth-protected-resource'
     | '/creations/$slug'
+    | '/services/$slug'
     | '/creations/'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -183,6 +195,7 @@ export interface RootRouteChildren {
   VisionRoute: typeof VisionRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   CreationsSlugRoute: typeof CreationsSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
   CreationsIndexRoute: typeof CreationsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   CreationsSlugRoute: CreationsSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
   CreationsIndexRoute: CreationsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
