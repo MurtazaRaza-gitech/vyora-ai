@@ -19,7 +19,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
               ) : (
                 <>
                   <Link
-                    to={item.path}
+                    to={item.path as never}
                     className="transition-colors hover:text-foreground underline-offset-4 hover:underline"
                   >
                     {item.name}
