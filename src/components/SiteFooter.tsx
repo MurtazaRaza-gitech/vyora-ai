@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin } from "lucide-react";
 import { products } from "@/lib/products";
+import { services } from "@/lib/services";
 
 
 export function SiteFooter() {
   return (
     <footer className="relative mt-24 border-t border-border bg-card/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-lg overflow-hidden">
@@ -41,6 +42,23 @@ export function SiteFooter() {
           </div>
 
           <div>
+            <h4 className="font-semibold text-sm mb-3">Services</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
+                    className="hover:text-foreground transition-colors"
+                  >
+                    {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-semibold text-sm mb-3">Products</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {products.map((p) => (
@@ -63,6 +81,7 @@ export function SiteFooter() {
               <li><Link to="/" className="hover:text-foreground transition-colors">Origin</Link></li>
               <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
               <li><Link to="/minds" className="hover:text-foreground transition-colors">Minds</Link></li>
+              <li><Link to="/services" className="hover:text-foreground transition-colors">Services</Link></li>
               <li><Link to="/creations" className="hover:text-foreground transition-colors">Creations</Link></li>
               <li><Link to="/vision" className="hover:text-foreground transition-colors">Vision</Link></li>
               <li><Link to="/pulse" className="hover:text-foreground transition-colors">Pulse</Link></li>

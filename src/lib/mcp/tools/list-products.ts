@@ -18,7 +18,7 @@ export default defineTool({
       features: p.features,
       availability: p.availability,
       url: p.externalUrl ?? null,
-      page: `https://vyora.aitech.workers.dev/creations/${p.slug}`,
+      page: `https://vyora-ai.technology/creations/${p.slug}`,
     }));
     return {
       content: [{ type: "text", text: JSON.stringify({ products: data }, null, 2) }],

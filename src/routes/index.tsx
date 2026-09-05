@@ -6,11 +6,12 @@ import { JourneyTimeline } from "@/components/JourneyTimeline";
 import { Sparkles, Layers, Target, Lightbulb, Compass } from "lucide-react";
 import { CAPABILITIES, pageMeta } from "@/lib/site";
 import { products } from "@/lib/products";
+import { services } from "@/lib/services";
 
 export const Route = createFileRoute("/")({
   head: () =>
     pageMeta({
-      title: "AI & App Development Company in Pakistan | VYORA.AI",
+      title: "VYORA.AI | App & AI Development Company in Pakistan",
       description:
         "VYORA.AI builds mobile apps, AI applications, web software, APIs and intelligent digital products from Lahore, Pakistan for users worldwide.",
       path: "/",
@@ -169,6 +170,23 @@ function Origin() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <h3 className="text-lg font-semibold mb-4">Explore our services</h3>
+            <ul className="flex flex-wrap justify-center gap-3">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
+                    className="inline-flex rounded-full glass border border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-primary/60"
+                  >
+                    {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -186,8 +204,13 @@ function Origin() {
                 q: "What is VYORA.AI?",
                 a: (
                   <>
-                    VYORA.AI is a technology and product-building company that develops mobile apps,
-                    web applications, AI products, APIs, AI agents and software.{" "}
+                    VYORA.AI is a technology and product-building company in Lahore, Pakistan that
+                    develops mobile apps, web applications, AI products, APIs, AI agents and
+                    software. See{" "}
+                    <Link to="/services" className="text-primary underline underline-offset-4">
+                      what we build
+                    </Link>
+                    {" or "}
                     <Link to="/about" className="text-primary underline underline-offset-4">
                       Learn about VYORA.AI
                     </Link>
