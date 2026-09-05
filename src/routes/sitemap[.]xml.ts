@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { products } from "@/lib/products";
 import { SITE } from "@/lib/site";
+import { services } from "@/lib/services";
 
 const BASE_URL = SITE.url;
 
@@ -9,6 +10,7 @@ const staticPaths = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/about", priority: "0.8", changefreq: "monthly" },
   { path: "/minds", priority: "0.8", changefreq: "monthly" },
+  { path: "/services", priority: "0.9", changefreq: "monthly" },
   { path: "/creations", priority: "0.9", changefreq: "weekly" },
   { path: "/vision", priority: "0.7", changefreq: "monthly" },
   { path: "/pulse", priority: "0.6", changefreq: "monthly" },
@@ -21,6 +23,11 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: () => {
         const entries = [
           ...staticPaths,
+          ...services.map((s) => ({
+            path: `/services/${s.slug}`,
+            priority: "0.9",
+            changefreq: "monthly",
+          })),
           ...products.map((p) => ({
             path: `/creations/${p.slug}`,
             priority: "0.8",

@@ -9,6 +9,7 @@ const NAV = [
   { to: "/", label: "Origin" },
   { to: "/about", label: "About" },
   { to: "/minds", label: "Minds" },
+  { to: "/services", label: "Services" },
   { to: "/creations", label: "Creations" },
   { to: "/vision", label: "Vision" },
   { to: "/pulse", label: "Pulse" },
@@ -39,7 +40,7 @@ export function SiteHeader() {
       >
         {/* Left nav (desktop) */}
         <nav className="hidden lg:flex items-center gap-6 flex-1">
-          {NAV.slice(0, 3).map((item) => (
+          {NAV.slice(0, 4).map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -71,7 +72,7 @@ export function SiteHeader() {
 
         {/* Right nav (desktop) */}
         <nav className="hidden lg:flex items-center gap-6 flex-1 justify-end">
-          {NAV.slice(3).map((item) => (
+          {NAV.slice(4).map((item) => (
             <Link
               key={item.to}
               to={item.to}
